@@ -10,11 +10,16 @@
 @include mat.core-theme(themes.$my-app-light-theme);
 @include mat.button-theme(themes.$my-app-light-theme);
 
+@media (prefers-color-scheme: dark) {
+  @include mat.core-color(themes.$my-app-dark-theme);
+  @include mat.button-color(themes.$my-app-dark-theme);
+}
+
 html,
 body {
   height: 100%;
 }
 body {
   margin: 0;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
 }
