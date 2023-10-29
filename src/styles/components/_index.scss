@@ -1,0 +1,5 @@
+@use "../../app/ui/alert/alert-theme" as alert;
+
+@mixin theme($theme) {
+    @include alert.theme($theme);
+}

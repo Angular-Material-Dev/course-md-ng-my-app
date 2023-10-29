@@ -1,5 +1,25 @@
-<div class="demo-buttons">
-  <button mat-raised-button color="primary">Raised</button>
-  <button mat-raised-button color="accent">Accent</button>
-  <button mat-raised-button color="warn">Warn</button>
+<!-- src/app/app.component.html -->
+
+<div class="container">
+  <h1>Angular Material Theming System: Complete Guide</h1>
+  <button
+    mat-icon-button
+    class="theme-toggle"
+    aria-label="Change theme"
+    [matMenuTriggerFor]="themeMenu"
+  >
+    <mat-icon>{{ (isDark$ | async) === true ? "dark_mode" : "light_mode" }}</mat-icon>
+  </button>
+  <mat-menu #themeMenu="matMenu">
+    <button mat-menu-item (click)="changeTheme('auto')">System</button>
+    <button mat-menu-item (click)="changeTheme('light')">Light</button>
+    <button mat-menu-item (click)="changeTheme('dark')">Dark</button>
+  </mat-menu>
+  <div class="demo-buttons">
+    <button mat-raised-button color="primary">Raised</button>
+    <button mat-raised-button color="accent">Accent</button>
+    <button mat-raised-button color="warn">Warn</button>
+  </div>
+
+  <app-alert></app-alert>
 </div>

@@ -3,17 +3,17 @@
 @use "@angular/material" as mat;
 @use "./styles/themes/all" as themes;
 @use "./styles/typography/config";
+@use "./styles/components";
 
 @include mat.core();
 
 @include mat.typography-hierarchy(config.$my-app-typography);
 @include mat.core-theme(themes.$my-app-light-theme);
 @include mat.button-theme(themes.$my-app-light-theme);
+@include mat.icon-theme(themes.$my-app-light-theme);
+@include mat.menu-theme(themes.$my-app-light-theme);
 
-@media (prefers-color-scheme: dark) {
-  @include mat.core-color(themes.$my-app-dark-theme);
-  @include mat.button-color(themes.$my-app-dark-theme);
-}
+@include components.theme(themes.$my-app-light-theme);
 
 html,
 body {
