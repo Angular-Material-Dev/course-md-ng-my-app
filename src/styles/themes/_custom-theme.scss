@@ -1,0 +1,18 @@
+@use "@angular/material" as mat;
+
+$custom-primary: mat.define-palette(mat.$pink-palette, 700, 500, 900);
+$custom-accent: mat.define-palette(mat.$blue-grey-palette, A200, A100, A400);
+
+$custom-theme: mat.define-dark-theme(
+  (
+    color: (
+      primary: $custom-primary,
+      accent: $custom-accent,
+    ),
+  )
+);
+
+.custom-theme {
+  @include mat.button-color($custom-theme);
+  @include mat.progress-spinner-color($custom-theme);
+}

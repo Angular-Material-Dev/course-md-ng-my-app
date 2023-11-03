@@ -4,6 +4,8 @@
 @use "./styles/themes/all" as themes;
 @use "./styles/typography/config";
 @use "./styles/components";
+@use "./styles/themes/custom-theme";
+@use "./styles/sizes";
 
 @include mat.core();
 
@@ -22,4 +24,13 @@ body {
 body {
   margin: 0;
   font-family: "Inter", sans-serif;
+}
+
+.button-rounded {
+  &.mat-mdc-button,
+  &.mat-mdc-raised-button,
+  &.mdc-button--unelevated,
+  &.mdc-button--outlined {
+    border-radius: 25% / 50%;
+  }
 }

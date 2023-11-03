@@ -8,7 +8,9 @@
     aria-label="Change theme"
     [matMenuTriggerFor]="themeMenu"
   >
-    <mat-icon>{{ (isDark$ | async) === true ? "dark_mode" : "light_mode" }}</mat-icon>
+    <mat-icon>{{
+      (isDark$ | async) === true ? "dark_mode" : "light_mode"
+    }}</mat-icon>
   </button>
   <mat-menu #themeMenu="matMenu">
     <button mat-menu-item (click)="changeTheme('auto')">System</button>
@@ -16,10 +18,30 @@
     <button mat-menu-item (click)="changeTheme('dark')">Dark</button>
   </mat-menu>
   <div class="demo-buttons">
+    <h2>Default Theme</h2>
     <button mat-raised-button color="primary">Raised</button>
     <button mat-raised-button color="accent">Accent</button>
     <button mat-raised-button color="warn">Warn</button>
   </div>
-
+  <div class="demo-buttons custom-theme">
+    <h2>Custom Theme</h2>
+    <button mat-raised-button color="primary">Raised</button>
+    <button mat-raised-button color="accent">Accent</button>
+    <button mat-raised-button color="warn">Warn</button>
+  </div>
+  <div class="demo-buttons">
+    <h2>Rounded Buttons</h2>
+    <button mat-raised-button color="primary" class="button-rounded">Raised</button>
+    <button mat-raised-button color="accent" class="button-rounded">Accent</button>
+    <button mat-raised-button color="warn" class="button-rounded">Warn</button>
+  </div>
+  <div class="demo-buttons sm">
+    <h2>Small Buttons</h2>
+    <button mat-raised-button color="primary">Raised</button>
+    <button mat-raised-button color="accent">Accent</button>
+    <button mat-raised-button color="warn">Warn</button>
+  </div>
+  <hr />
+  <h2>Angular Material Theme applied to custom component</h2>
   <app-alert></app-alert>
 </div>
