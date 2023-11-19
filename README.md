@@ -1,6 +1,10 @@
-# MyApp
+# Angular Material Components Theming System: Complete Guide
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.2.
+In this course, we will learn about custom themes, modifying typography and much more using new SASS mixins for Angular Material Components.
+
+## Course
+
+Read the course at <https://angular-material.dev/courses/m2-ng-components>
 
 ## Development server
 
