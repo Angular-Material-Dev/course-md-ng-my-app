@@ -9,13 +9,14 @@
 
 @include mat.core();
 
-@include mat.typography-hierarchy(config.$my-app-typography);
-@include mat.core-theme(themes.$my-app-light-theme);
-@include mat.button-theme(themes.$my-app-light-theme);
-@include mat.icon-theme(themes.$my-app-light-theme);
-@include mat.menu-theme(themes.$my-app-light-theme);
+html {
+  @include mat.core-theme(themes.$my-app-light-theme);
+  @include mat.button-theme(themes.$my-app-light-theme);
+  @include mat.icon-theme(themes.$my-app-light-theme);
+  @include mat.menu-theme(themes.$my-app-light-theme);
 
-@include components.theme(themes.$my-app-light-theme);
+  @include components.theme(themes.$my-app-light-theme);
+}
 
 html,
 body {
@@ -27,10 +28,5 @@ body {
 }
 
 .button-rounded {
-  &.mat-mdc-button,
-  &.mat-mdc-raised-button,
-  &.mdc-button--unelevated,
-  &.mdc-button--outlined {
-    border-radius: 25% / 50%;
-  }
+  --mdc-protected-button-container-shape: 16px;
 }

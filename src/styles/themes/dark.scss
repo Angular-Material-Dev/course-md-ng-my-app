@@ -4,8 +4,12 @@
 
 .dark-theme {
   @include mat.core-color(themes.$my-app-dark-theme);
+  @include mat.core-typography(themes.$my-app-dark-theme);
   @include mat.button-color(themes.$my-app-dark-theme);
+  @include mat.button-typography(themes.$my-app-dark-theme);
   @include mat.icon-color(themes.$my-app-dark-theme);
+  @include mat.icon-typography(themes.$my-app-dark-theme);
   @include mat.menu-color(themes.$my-app-dark-theme);
+  @include mat.menu-typography(themes.$my-app-dark-theme);
   @include components.theme(themes.$my-app-dark-theme);
 }

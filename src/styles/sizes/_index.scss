@@ -1,19 +1,10 @@
 @use "@angular/material" as mat;
 
-$regular-font-family: "'Inter', sans-serif";
-
-$sm-typography: mat.define-typography-config(
-  $font-family: $regular-font-family,
-  $button:
-    mat.define-typography-level(
-      $font-size: 14px,
-    ),
-);
-
-$sm-theme: mat.define-light-theme(
+$sm-theme: mat.define-theme(
   (
-    typography: $sm-typography,
-    density: -2,
+    density: (
+      scale: -2,
+    ),
   )
 );
 

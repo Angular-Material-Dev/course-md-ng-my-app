@@ -4,50 +4,46 @@
 @use "@angular/material" as mat;
 
 @mixin color($theme) {
-  // Get the color config from the theme.
-  $color-config: mat.get-color-config($theme);
-
-  // Get the primary color palette from the color-config.
-  $primary-palette: map.get($color-config, "primary");
-  $is-dark-theme: map.get($theme, is-dark);
-  $exportBackgroundOpacity: if($is-dark-theme, 0.12, 0.06);
-
   .alert {
-    color: mat.get-color-from-palette($primary-palette, if($is-dark-theme, 50, default));
-    background: mat.get-color-from-palette(
-            $primary-palette,
-            300,
-            $exportBackgroundOpacity
-          );
-    border-color: mat.get-color-from-palette($primary-palette, 100);
+    color: mat.get-theme-color($theme, on-primary-container);
+    background: mat.get-theme-color($theme, primary-container);
+    border-color: mat.get-theme-color($theme, primary);
 
     .alert-link {
-      color: mat.get-color-from-palette($primary-palette, if($is-dark-theme, 200, 500));
+      color: mat.get-theme-color($theme, on-primary-container);
     }
   }
 }
 
-@mixin typography($typography-config) {
+@mixin typography($theme) {
   .alert {
-    font-family: mat.font-family($typography-config);
+    font: mat.get-theme-typography($theme, "body-medium", "font");
+    letter-spacing: mat.get-theme-typography(
+      $theme,
+      "body-medium",
+      "letter-spacing"
+    );
 
     .alert-heading {
-      @include mat.typography-level($typography-config, "headline-6");
+      font: mat.get-theme-typography($theme, "headline-small", "font");
+      letter-spacing: mat.get-theme-typography(
+        $theme,
+        "headline-small",
+        "letter-spacing"
+      );
     }
     .alert-footer {
-      @include mat.typography-level($typography-config, "caption");
+      font: mat.get-theme-typography($theme, "label-small", "font");
+      letter-spacing: mat.get-theme-typography(
+        $theme,
+        "label-small",
+        "letter-spacing"
+      );
     }
   }
 }
 
 @mixin theme($theme) {
-  $color-config: mat.get-color-config($theme);
-  @if $color-config != null {
-    @include color($theme);
-  }
-
-  $typography-config: mat.get-typography-config($theme);
-  @if $typography-config != null {
-    @include typography($typography-config);
-  }
+  @include color($theme);
+  @include typography($theme);
 }
