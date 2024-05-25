@@ -2,15 +2,15 @@
 
 $regular-font-family: "'Inter', sans-serif";
 
-$sm-typography: mat.define-typography-config(
+$sm-typography: mat.m2-define-typography-config(
   $font-family: $regular-font-family,
   $button:
-    mat.define-typography-level(
+    mat.m2-define-typography-level(
       $font-size: 14px,
     ),
 );
 
-$sm-theme: mat.define-light-theme(
+$sm-theme: mat.m2-define-light-theme(
   (
     typography: $sm-typography,
     density: -2,
